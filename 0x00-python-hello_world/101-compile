@@ -1,0 +1,5 @@
+#!/bin/bash
+file="$PYFILE"
+echo "Compiling $file ..."
+python3 -m py_compile $file
+mv __pycache__/*.pyc $file"c"
