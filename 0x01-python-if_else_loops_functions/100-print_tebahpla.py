@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 new_c = 0
+
+
 def main():
     for c in range(ord('z'), ord('`'), - 1):
         if c % 2 == 0:
