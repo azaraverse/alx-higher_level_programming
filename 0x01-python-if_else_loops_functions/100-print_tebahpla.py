@@ -8,4 +8,6 @@ def main():
         else:
             new_c = c - 32
         print('{}'.format(chr(new_c)), end='')
+
+
 main()
