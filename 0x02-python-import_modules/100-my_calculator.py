@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-def calc():
+def usage():
     argv_len = len(sys.argv)
     operator = ['+', '-', '*', '/']
-    if argv_len != 4:
-        print('Usage: {} <a> <operator> <b>'.format(sys.argv[0]))
+    if argv_len < 4 or argv_len > 4:
+        print('Usage: {:s} <a> <operator> <b>'.format(sys.argv[0]))
         sys.exit(1)
     if sys.argv[2] not in operator:
         print('Unknown operator. Available operators: +, -, *, /')
@@ -27,5 +27,5 @@ def print_calc():
 if __name__ == '__main__':
     import sys
     from calculator_1 import add, sub, mul, div
-    calc()
+    usage()
     print_calc()
