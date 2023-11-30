@@ -9,7 +9,7 @@ def print_argv():
         print('{} arguments:'.format(argv_len - 1))
 
     for i, args in enumerate(argv[1:], start=1):
-        print(f'{}: {}'.format(i, args))
+        print('{}: {}'.format(i, args))
 
 
 if __name__ == '__main__':
