@@ -4,12 +4,12 @@ def print_argv():
     if argv_len == 1:
         print('0 arguments.')
     elif argv_len == 2:
-        print(f'{argv_len - 1} argument:')
+        print('{} argument:'.format(argv_len - 1))
     else:
-        print(f'{argv_len - 1} arguments:')
+        print('{} arguments:'.format(argv_len - 1))
 
     for i, args in enumerate(argv[1:], start=1):
-        print(f'{i}: {args}')
+        print(f'{}: {}'.format(i, args))
 
 
 if __name__ == '__main__':
