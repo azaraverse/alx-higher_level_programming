@@ -3,12 +3,12 @@
 def usage():
     argv_len = len(sys.argv)
     operator = ['+', '-', '*', '/']
-    if argv_len < 4 or argv_len > 4:
+    if argv_len != 4:
         print('Usage: {:s} <a> <operator> <b>'.format(sys.argv[0]))
-        sys.exit(1)
+        exit(1)
     if sys.argv[2] not in operator:
         print('Unknown operator. Available operators: +, -, *, and /')
-        sys.exit(1)
+        exit(1)
 
 
 def print_calc():
