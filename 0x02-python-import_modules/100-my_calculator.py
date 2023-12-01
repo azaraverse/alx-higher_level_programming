@@ -18,7 +18,7 @@ def print_calc():
         print('{:d} / {:d} = {:.0f}'.format(a, b, div(a, b)))
     else:
         if sys.argv[2] not in operator:
-            print('Unknown operator. Available operators: +, -, *, and /')
+            print('Unknown operator. Available operators: +, -, * and /')
             exit(1)
 
 
