@@ -25,4 +25,8 @@ def print_calc():
 if __name__ == '__main__':
     import sys
     from calculator_1 import add, sub, mul, div
-    print_calc()
+    try:
+        print_calc()
+    except ValueError:
+        print('Operands must be integers')
+        exit(1)
