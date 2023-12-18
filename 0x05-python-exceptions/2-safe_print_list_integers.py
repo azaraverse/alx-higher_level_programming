@@ -11,9 +11,9 @@ def safe_print_list_integers(my_list=[], x=0):
 
                 # increment the count of int printed to move to the next
                 integer_count += 1
-    except IndexError:
+    # except IndexError:
         # if an index error occurs, we have reached the end of our list
-        pass
+        # pass
     except ValueError:
         pass
     except TypeError:
