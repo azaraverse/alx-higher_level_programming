@@ -14,6 +14,8 @@ def safe_print_list_integers(my_list=[], x=0):
     except IndexError:
         # if an index error occurs, we have reached the end of our list
         pass
+    except ValueError:
+        pass
     # handle new line
     print()
 
