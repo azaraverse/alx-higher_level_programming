@@ -56,4 +56,8 @@ class Square:
         Args (int):
             size: size of square to set.
         """
-        self.__size = value
+        # handle integer
+        if not isinstance(value, int):
+            raise TypeError('size must be an integer')
+        else:
+            self.__size = value
