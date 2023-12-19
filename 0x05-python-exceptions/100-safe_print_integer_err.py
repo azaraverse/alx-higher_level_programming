@@ -12,11 +12,10 @@ def safe_print_integer_err(value):
 
         # return True, since the value has been correctly printed
         return (True)
-    except ValueError as err:
+    except (ValueError, TypeError) as err:
         # if a ValueError occurs, it means the value is not an int
         # handle error writing to stdout
-        err = "Exception: " + str(err) + "\n"
-        sys.stderr.write(err)
+        print("Exception:", err, file=sys.stderr)
 
         # return False then
         return (False)
