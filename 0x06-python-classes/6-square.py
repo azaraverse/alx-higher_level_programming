@@ -71,13 +71,13 @@ class Square:
         cordinates.
         """
         # handle '#' and position when size is greater than 0
-        if self.__size > 0:
+        if self.__size == 0:
+            print()
+        else:
             for _ in range(self.__position[1]):
                 print()
             for _ in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
-        else:
-            print()
 
     @property
     def position(self):
@@ -95,10 +95,14 @@ class Square:
 
         Args (int):
             value: position to set.
+        Raises:
+            TypeError: if value is not a tuple of two positive integers
         """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
-        if sum(1 for i in value if isinstance(i, int) and i >= 0) != 2:
+        elif sum(1 for i in value if isinstance(i, int) and i >= 0) != 2:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        elif (value[0] < 0 and value[1] < 0):
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
