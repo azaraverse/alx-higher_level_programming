@@ -1,9 +1,10 @@
 #!/usr/bin/python
-import math
 
 """
 Python class that does as a given Python bytecode
 """
+
+import math
 
 
 class MagicClass:
