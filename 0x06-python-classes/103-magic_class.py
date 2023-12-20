@@ -1,13 +1,16 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-"""Python class that does as a given Python bytecode"""
+"""
+Python class that does as a given Python bytecode
+"""
 
 import math
 
 
 class MagicClass:
-    """A MagicClass class defined here"""
-
+    """
+    A MagicClass class defined here
+    """
     def __init__(self, radius=0) -> None:
         """
         Creates an instance of the MagicClass class
