@@ -68,7 +68,11 @@ class Square:
         Raises:
             TypeError: if value is not a tuple of two positive integers
         """
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) and i >= 0 for i in value):
+        if not (isinstance(value, tuple) or len(value) != 2 or not all(
+            isinstance(i, int) and i >= 0 for i in value)
+        ):
+            raise TypeError('position must be a tuple of 2 positive integers')
+        elif any(i < 0 for i in value):
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
@@ -81,7 +85,7 @@ class Square:
         Returns (int): area of a square
         """
         return self.__size ** 2
-    
+
     def my_print(self):
         """
         public instance method that prints in stdout the square
