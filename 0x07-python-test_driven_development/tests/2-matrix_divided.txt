@@ -1,0 +1,36 @@
+================
+2-matrix_divided
+================
+
+How to use this module
+======================
+
+# import the module into a .py file
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# success test
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+>>> matrix = [[0.5, 1.0, 1.5], ['a', 2.5, 3.0]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>> matrix_divided(matrix, 'sample')
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
