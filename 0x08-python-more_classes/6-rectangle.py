@@ -5,10 +5,13 @@ A rectangle class
 
 
 class Rectangle:
+    """A Rectangle class that defines a rectangle.
+    Attributes:
+        number_of_instances (int): initialised to 0, checks number of
+        rectangle instances during instantiation and after deletion
+    """
     number_of_instances = 0
-    """
-    A class Rectangle that defines a rectangle
-    """
+
     def __init__(self, width=0, height=0):
         """Creates an instance of the rectangle class
         Args:
