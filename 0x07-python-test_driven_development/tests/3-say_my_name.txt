@@ -1,0 +1,35 @@
+=============
+3-say_my_name
+=============
+
+How to use this module
+======================
+
+# import the module into a .py file
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# test code as below
+>>> say_my_name('Azara', 'Coder')
+My name is Azara Coder
+
+>>> say_my_name('Looooooooooooooooong', 'string')
+My name is Looooooooooooooooong string
+
+>>> say_my_name('Azara') # doctest: +NORMALIZE_WHITESPACE
+My name is Azara
+
+# attempting to use ascii representation
+>>> say_my_name(651229711497)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name('Kofi', 2024)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name(20, 24)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
