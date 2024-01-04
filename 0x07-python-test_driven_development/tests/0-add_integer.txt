@@ -1,0 +1,63 @@
+=============
+0-add_integer
+=============
+
+How to use this module
+======================
+
+# import the module into a .py file
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# where a is an integer and b is an integer, use as;
+>>> add_integer(10, 1)
+11
+
+# where both a and b are negative integers, use as;
+>>> add_integer(-2, -4)
+-6
+
+# where a is negative or b is negative, use as;
+>>> add_integer(-2, 4)
+2
+>>> add_integer(2, -4)
+-2
+
+# where a is a float or b is a float or both are, use as;
+>>> add_integer(3.5, 4)
+7
+>>> add_integer(4, 5.5)
+9
+>>> add_integer(10.9, 2.7)
+12
+
+# where 'a' is a string, or b is, or both are, use as;
+>>> add_integer('string', 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(2, 'sample')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer('string', 'sample')
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# where None is passed as argument to a, or b, or both, use as;
+>>> add_integer(None, 100)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(1000, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
