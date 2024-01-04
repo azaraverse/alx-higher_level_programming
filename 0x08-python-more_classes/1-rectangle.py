@@ -4,9 +4,9 @@ A rectangle class
 """
 
 
-class Rectangle():
+class Rectangle:
     """
-    An class Rectangle that defines a rectangle
+    A class Rectangle that defines a rectangle
     """
     def __init__(self, width=0, height=0):
         """Creates an instance of the rectangle class
@@ -25,7 +25,7 @@ class Rectangle():
         Returns:
             width
         """
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, width):
@@ -52,7 +52,7 @@ class Rectangle():
         Returns:
             height
         """
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, height):
