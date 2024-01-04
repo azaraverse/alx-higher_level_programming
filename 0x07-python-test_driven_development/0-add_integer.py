@@ -6,7 +6,12 @@ A function that adds 2 integers.
 
 def add_integer(a, b=98):
     """Adds two integers
-    Returns: An integer; the addition of a and b.
+
+    Args:
+        a (int): int a
+        b (int): int b
+    Returns:
+        An integer; the addition of a and b.
     """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError('a must be an integer')

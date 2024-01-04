@@ -1,0 +1,55 @@
+==================
+5-text_indentation
+==================
+
+How to use this module
+======================
+
+# import the module into a .py file
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# try with characters
+>>> text_1 = 'Try? Yes. How:'
+>>> text_indentation(text_1)
+Try?
+<BLANKLINE>
+Yes.
+<BLANKLINE>
+How:
+<BLANKLINE>
+
+# more tries
+>>> text_indentation("""Lorem ipsum? dolor sit: amet.""")
+Lorem ipsum?
+<BLANKLINE>
+dolor sit:
+<BLANKLINE>
+amet.
+<BLANKLINE>
+
+# try with non-string characters
+>>> non_string = 26
+>>> text_indentation(non_string)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# try two string characters
+>>> text_2 = 'azara.coder?'
+>>> text_3 = 'azara?coder.'
+>>> text_4 = 'azara:coder?'
+>>> text_indentation(text_2)
+azara.
+<BLANKLINE>
+coder?
+<BLANKLINE>
+>>> text_indentation(text_3)
+azara?
+<BLANKLINE>
+coder.
+<BLANKLINE>
+>>> text_indentation(text_4)
+azara:
+<BLANKLINE>
+coder?
+<BLANKLINE>

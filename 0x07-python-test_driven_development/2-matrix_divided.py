@@ -5,7 +5,14 @@ A function that divides all elements of a matrix.
 
 
 def matrix_divided(matrix, div):
-    """defined function for matrix division."""
+    """defined function for matrix division.
+
+    Args:
+        matrix (list): list of lists of integers/floats
+        div (int): denominator
+    Returns:
+        new matrix
+    """
     # first check if div is a number (int or float)
     if not isinstance(div, (int, float)):
         raise TypeError('div must be a number')
