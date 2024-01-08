@@ -1,0 +1,41 @@
+=========
+1-my_list
+=========
+
+How to use this module...
+=========================
+
+# import module into a .py file
+>>> MyList = __import__('1-my_list').MyList
+
+# test easy integers
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(7)
+>>> my_list.append(12)
+>>> my_list.append(8)
+>>> my_list.append(16)
+>>> my_list.print_sorted()
+[3, 7, 8, 12, 16]
+
+# test mix of positives and negatives
+>>> my_list = MyList()
+>>> my_list.append(-3)
+>>> my_list.append(-7)
+>>> my_list.append(0)
+>>> my_list.append(12)
+>>> my_list.append(8)
+>>> my_list.append(16)
+>>> my_list.print_sorted()
+[-7, -3, 0, 8, 12, 16]
+
+# test all negatives and one 0
+>>> my_list = MyList()
+>>> my_list.append(-3)
+>>> my_list.append(-7)
+>>> my_list.append(0)
+>>> my_list.append(-12)
+>>> my_list.append(-8)
+>>> my_list.append(-16)
+>>> my_list.print_sorted()
+[-16, -12, -8, -7, -3, 0]
