@@ -25,3 +25,8 @@ ValueError: __gt__ 0 must be greater than 0
 Traceback (most recent call last):
     ...
 ValueError: negative must be greater than 0
+
+>>> bg.integer_validator('None', 'None')
+Traceback (most recent call last):
+    ...
+TypeError: None must be an integer
