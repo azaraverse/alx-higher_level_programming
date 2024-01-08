@@ -41,3 +41,20 @@ class BaseGeometry():
         # validate value is greater than 0
         if value <= 0:
             raise ValueError(f'{name} must be greater than 0')
+
+
+class Rectangle(BaseGeometry):
+    """class that inherits attributes and methods of BaseGeometry."""
+    def __init__(self, width, height):
+        """init method instance for subclass Rectangle to BaseGeometry
+
+        Args:
+            width (int): width int
+            height (int): height int
+        """
+        # set args to private
+        self.__width = width
+        self.__height = height
+        # validate width and height int as positives
+        super().integer_validator('width', width)
+        super().integer_validator('height', height)
