@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """Returns the area value."""
         return self.__width * self.__height
-    
+
     def __str__(self):
         """Returns rectangle description."""
         return f'[{type(self).__name__}] {self.__width}/{self.__height}'
