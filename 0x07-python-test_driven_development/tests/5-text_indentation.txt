@@ -9,14 +9,13 @@ How to use this module
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 # try with characters
->>> text_1 = 'Try? Yes. How:'
+>>> text_1 = 'Try? Yes. How'
 >>> text_indentation(text_1)
 Try?
 <BLANKLINE>
 Yes.
 <BLANKLINE>
-How:
-<BLANKLINE>
+How
 
 # more tries
 >>> text_indentation("""Lorem ipsum? dolor sit: amet.""")
@@ -25,7 +24,6 @@ Lorem ipsum?
 dolor sit:
 <BLANKLINE>
 amet.
-<BLANKLINE>
 
 # try with non-string characters
 >>> non_string = 26
@@ -42,14 +40,16 @@ TypeError: text must be a string
 azara.
 <BLANKLINE>
 coder?
-<BLANKLINE>
 >>> text_indentation(text_3)
 azara?
 <BLANKLINE>
 coder.
-<BLANKLINE>
 >>> text_indentation(text_4)
 azara:
 <BLANKLINE>
 coder?
-<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

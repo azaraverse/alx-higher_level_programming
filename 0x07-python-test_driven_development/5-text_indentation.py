@@ -19,13 +19,15 @@ def text_indentation(text):
     punctuation_set = {'.', '?', ':'}
     current_line = ''
 
-    for char in text:
+    for idx, char in enumerate(text):
         current_line += char
         if char in punctuation_set:
-            print(current_line.strip())
-            # print two new lines
-            print()
-            current_line = ''
+            # check if there is another character after the current one
+            if idx + 1 < len(text):
+                print(current_line.strip())
+                # print two new lines
+                print()
+                current_line = ''
 
     if current_line:
         print(current_line.strip())
