@@ -40,3 +40,18 @@ TypeError: float must be an integer
 Traceback (most recent call last):
     ...
 TypeError: neg float must be an integer
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator('one arg')
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator(value=10)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'name'
