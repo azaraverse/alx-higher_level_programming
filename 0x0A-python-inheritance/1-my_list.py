@@ -4,6 +4,7 @@
 
 
 class MyList(list):
+    """Class MyList"""
     def print_sorted(self):
         """Uses bubble sort to return a sorted list
 
