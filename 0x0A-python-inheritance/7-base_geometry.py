@@ -5,16 +5,6 @@
 
 class BaseGeometry():
     """Class BaseGeometry"""
-    def __init__(self, name=str, value=int) -> None:
-        """Init instance created.
-
-        Args:
-            name (str): arg 1
-            value (int): arg 2
-        """
-        self.name = name
-        self.value = value
-
     def area(self):
         """area function: empty
 
