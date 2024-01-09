@@ -12,8 +12,8 @@ def append_write(filename='', text=''):
     Returns:
         string count of appended text to stdout
     """
-    # open file with 'r' read-only mode
     written = 0
+    # open file with 'a' append mode
     with open(filename, 'a', encoding='UTF-8') as file:
         written += file.write(text)
     return written

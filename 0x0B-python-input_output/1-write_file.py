@@ -12,8 +12,8 @@ def write_file(filename='', text=''):
     Returns:
         string count of written text to stdout
     """
-    # open file with 'r' read-only mode
     written = 0
+    # open file with 'w' write mode
     with open(filename, 'w', encoding='UTF-8') as file:
         written += file.write(text)
     return written
