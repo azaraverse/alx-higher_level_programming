@@ -20,7 +20,7 @@ def add_items_then_save(args):
     try:
         # load existing items from the file
         existing_items = load_from_json(filename)
-    except FileNotFoundError:
+    except Exception:
         # if the file does not exist, create an empty list
         existing_items = []
 
