@@ -34,7 +34,8 @@ class Student():
                     if key in attrs}
 
     def reload_from_json(self, json):
-        """Replaces all attributes of the Student instance based on a dictionary
+        """Replaces all attributes of the Student instance based on a
+        dictionary
 
         Args:
             json (dict): a dictionary containing attr names and values
