@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""PASCAL_TRIANGLE MODULE
+"""
 
 
 def pascal_triangle(n):
