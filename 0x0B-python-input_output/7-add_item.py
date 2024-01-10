@@ -20,12 +20,13 @@ def add_items_then_save(args):
         a list of all arguments passed to script
     """
     filename = 'add_item.json'
+    existing_items = []
     try:
         # load existing items from the file
         existing_items = load_from_json(filename)
     except Exception:
         # if the file does not exist, create an empty list
-        existing_items = []
+        save_to_json([], filename)
 
     # add new items from the command line args
     existing_items.extend(args)
