@@ -101,8 +101,13 @@ class Rectangle(Base):
 
     def display(self):
         """print the Rectangle instance using the character '#'."""
+        # print empty lines for y-axis (coordinate)
+        for _ in range(self.y):
+            print()
+
+        # print spaces for the x-axis then attach '#' character
         for _ in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
 
     def __str__(self) -> str:
         """Return the string representation of the Rectangle instance."""
