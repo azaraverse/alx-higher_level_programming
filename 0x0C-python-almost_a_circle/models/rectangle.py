@@ -7,7 +7,7 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle class"""
 
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width=int, height=int, x=0, y=0, id=None):
         """Rectangle class constructor
 
         Args:
@@ -29,7 +29,7 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, width=int):
         """setter method for width attr of Rectangle class
 
         Args:
@@ -43,7 +43,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self, height):
+    def height(self, height=int):
         """setter method for height attr of Rectangle class
 
         Args:
