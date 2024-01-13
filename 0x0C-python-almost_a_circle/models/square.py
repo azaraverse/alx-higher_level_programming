@@ -39,3 +39,27 @@ class Square(Rectangle):
             f'[Square] ({self.id}) '
             f'{self.x}/{self.y} - {self.width}'
         )
+
+    def update(self, *args, **kwargs):
+        """Assigns positional arguments and key-worded arguments attrs
+
+        Args:
+            *args: variable or positional arguments
+            **kwargs: key-worded arguments
+        """
+        # if *arguments exist and is not empty, update attrs
+        # based on their positions
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+
+        # if *args is empty, update attrs based on **kwargs
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
