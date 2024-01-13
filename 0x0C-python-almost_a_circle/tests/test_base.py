@@ -37,7 +37,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(obj_5.id, 7)
 
     def test_mixture_of_id(self):
-        """Test if id is incremented when created without id."""
+        """Test a mix of if with_id arg and with_no id arg, and increment."""
         obj_1 = Base()
         obj_2 = Base()
         obj_3 = Base(45)
