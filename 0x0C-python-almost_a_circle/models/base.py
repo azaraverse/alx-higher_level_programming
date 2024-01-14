@@ -33,7 +33,7 @@ class Base():
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Class method that writes the JSON string representation of
@@ -50,3 +50,17 @@ class Base():
         with open(filename, 'w') as file:
             # write the json_string to the file
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Static method that returns the list of the JSON string
+        representation 'json_string'
+
+        Args:
+            json_string (str): string representing a list of dictionaries
+        Returns:
+            List if the JSON string representation json_string
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
