@@ -19,9 +19,9 @@ class TestBaseClass(unittest.TestCase):
         obj_1 = Base()
         obj_2 = Base()
         obj_3 = Base()
-        self.assertEqual(obj_1.id, 3)
-        self.assertEqual(obj_2.id, 4)
-        self.assertEqual(obj_3.id, 5)
+        self.assertEqual(obj_1.id, 6)
+        self.assertEqual(obj_2.id, 7)
+        self.assertEqual(obj_3.id, 8)
 
     def test_incrementing_id(self):
         """Tests if id increments in cumulative manner."""
@@ -30,11 +30,11 @@ class TestBaseClass(unittest.TestCase):
         obj_3 = Base(100)
         obj_4 = Base(202)
         obj_5 = Base()
-        self.assertEqual(obj_1.id, 7)
-        self.assertEqual(obj_2.id, 8)
+        self.assertEqual(obj_1.id, 10)
+        self.assertEqual(obj_2.id, 11)
         self.assertEqual(obj_3.id, 100)
         self.assertEqual(obj_4.id, 202)
-        self.assertEqual(obj_5.id, 9)
+        self.assertEqual(obj_5.id, 12)
 
     def test_mixture_of_id(self):
         """Test a mix of with_id arg and with_no id arg, and increment."""
@@ -43,11 +43,11 @@ class TestBaseClass(unittest.TestCase):
         obj_3 = Base(45)
         obj_4 = Base(55)
         obj_5 = Base()
-        self.assertEqual(obj_1.id, 10)
-        self.assertEqual(obj_2.id, 11)
+        self.assertEqual(obj_1.id, 13)
+        self.assertEqual(obj_2.id, 14)
         self.assertEqual(obj_3.id, 45)
         self.assertEqual(obj_4.id, 55)
-        self.assertEqual(obj_5.id, 12)
+        self.assertEqual(obj_5.id, 15)
 
     def test_id_is_int(self):
         """Test if id is an integer when created with no id arg."""
