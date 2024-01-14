@@ -48,7 +48,7 @@ class Base():
             [obj.to_dictionary() for obj in list_objs]
         )
         # create file or open file if it exists in write mode
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding='UTF-8') as file:
             # write the json_string to the file
             file.write(json_string)
 
@@ -76,10 +76,19 @@ class Base():
         Returns:
             an instance with all attributes already set
         """
-        if cls.__name__ == 'Rectangle':
+        if cls.__name__ == 'Rectangle' or cls.__name__ == 'Square':
             dummy_instance = rectangle.Rectangle(5, 10)
         else:
             raise ValueError(f'Unsupported class: {cls.__name__}')
         
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Class method that returns a list of instances"""
+        filename = cls.__name__ + '.json'
+        with open(filename, 'r', encoding='UTF-8') as file:
+            json_string = file.read()
+            dict_list = cls.from_json_string(json_string)
+            return [cls.create(**d) for d in dict_list]
