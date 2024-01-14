@@ -80,7 +80,7 @@ class Base():
             dummy_instance = rectangle.Rectangle(5, 10)
         else:
             raise ValueError(f'Unsupported class: {cls.__name__}')
-        
+
         dummy_instance.update(**dictionary)
         return dummy_instance
 
