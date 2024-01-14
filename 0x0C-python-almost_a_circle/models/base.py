@@ -2,6 +2,7 @@
 """ DEFINES BASE CLASS
 """
 import json
+import models.rectangle as rectangle
 
 
 class Base():
@@ -64,3 +65,21 @@ class Base():
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Class method that returns an instance with all attrs
+        already set
+
+        Args:
+            **dictionary (dict): key-worded argument
+        Returns:
+            an instance with all attributes already set
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy_instance = rectangle.Rectangle(5, 10)
+        else:
+            raise ValueError(f'Unsupported class: {cls.__name__}')
+        
+        dummy_instance.update(**dictionary)
+        return dummy_instance
