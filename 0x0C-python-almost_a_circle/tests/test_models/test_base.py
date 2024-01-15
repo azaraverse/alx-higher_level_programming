@@ -2,10 +2,20 @@
 """Defines base class tests
 """
 import unittest
+import json
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBaseClass(unittest.TestCase):
+
+    def setUp(self) -> None:
+        """Set up any id start point before each test"""
+        Base.__nb_objects = 0
+
+    def tearDown(self) -> None:
+        """Clean up"""
+        pass
 
     def test_constructor_with_id_arg(self):
         """Test the constructor when id is provided."""
@@ -53,6 +63,21 @@ class TestBaseClass(unittest.TestCase):
         """Test if id is an integer when created with no id arg."""
         obj = Base()
         self.assertIsInstance(obj.id, int)
+
+    def test_to_json_string_empty_list(self):
+        """Test JSON representation of an empty list"""
+        json_str = Base.to_json_string([])
+        self.assertEqual(json_str, '[]')
+
+    def test_to_json_string_list_of_dict(self):
+        """Test JSON representation of a list of dictionaries"""
+        dict_list = [
+            {'id': 1, 'name': 'azara', 'func': 'swe'},
+            {'id': 2, 'name': 'anna', 'func': 'analyst'}
+            ]
+        json_str = Base.to_json_string(dict_list)
+        expected_output = '[{"id": 1, "name": "azara", "func": "swe"}, {"id": 2, "name": "anna", "func": "analyst"}]'
+        self.assertEqual(json_str, expected_output)
 
 
 if __name__ == '__main__':
