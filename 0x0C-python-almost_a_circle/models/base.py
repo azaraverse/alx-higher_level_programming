@@ -2,7 +2,6 @@
 """ DEFINES BASE CLASS
 """
 import json
-import importlib
 
 
 class Base():
