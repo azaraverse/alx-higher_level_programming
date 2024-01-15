@@ -112,7 +112,7 @@ class Rectangle(Base):
     def __str__(self) -> str:
         """Return the string representation of the Rectangle instance."""
         return (
-            f'[Rectangle] ({self.id}) '
+            f'[{self.__class__.__name__}] ({self.id}) '
             f'{self.x}/{self.y} - {self.width}/{self.height}'
         )
 

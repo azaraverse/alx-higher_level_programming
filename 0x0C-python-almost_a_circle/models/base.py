@@ -2,7 +2,7 @@
 """ DEFINES BASE CLASS
 """
 import json
-import models.rectangle as rectangle
+import importlib
 
 
 class Base():
@@ -68,6 +68,8 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
+        from models.rectangle import Rectangle
+        from models.square import Square
         """Class method that returns an instance with all attrs
         already set
 
@@ -76,8 +78,11 @@ class Base():
         Returns:
             an instance with all attributes already set
         """
-        if cls.__name__ == 'Rectangle' or cls.__name__ == 'Square':
-            dummy_instance = rectangle.Rectangle(5, 10)
+        dummy_instance = None
+        if cls.__name__ == 'Rectangle':
+            dummy_instance = Rectangle(5, 10)
+        elif cls.__name__ == 'Square':
+            dummy_instance = Square(10)
         else:
             raise ValueError(f'Unsupported class: {cls.__name__}')
 
@@ -88,7 +93,10 @@ class Base():
     def load_from_file(cls):
         """Class method that returns a list of instances"""
         filename = cls.__name__ + '.json'
-        with open(filename, 'r', encoding='UTF-8') as file:
-            json_string = file.read()
-            dict_list = cls.from_json_string(json_string)
-            return [cls.create(**d) for d in dict_list]
+        try:
+            with open(filename, 'r', encoding='UTF-8') as file:
+                json_string = file.read()
+                dict_list = cls.from_json_string(json_string)
+                return [cls.create(**d) for d in dict_list]
+        except FileNotFoundError:
+            return []
