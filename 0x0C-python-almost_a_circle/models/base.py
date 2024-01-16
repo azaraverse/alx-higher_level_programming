@@ -2,6 +2,8 @@
 """ DEFINES BASE CLASS
 """
 import json
+import csv
+import turtle
 
 
 class Base():
@@ -104,3 +106,96 @@ class Base():
                 return [cls.create(**d) for d in dict_list]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Class method serialises to a csv file
+
+        Args:
+            list_objs (list): list of instances
+        """
+        filename = cls.__name__ + '.csv'
+        with open(filename, 'w', encoding='UTF-8', newline='') as csv_file:
+            writer = csv.writer(csv_file)
+
+            for obj in list_objs:
+                if cls.__name__ == 'Rectangle':
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    )
+                elif cls.__name__ == 'Square':
+                    writer.writerow(
+                        [obj.id, obj.size, obj.x, obj.y]
+                    )
+                else:
+                    raise ValueError(f'Unsupported class {cls.__name__}')
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Class method that deserialises from a csv file."""
+        filename = cls.__name__ + '.csv'
+        instances = []
+
+        with open(filename, 'r', encoding='UTF-8') as csv_file:
+            if cls.__name__ == 'Rectangle':
+                obj = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == 'Square':
+                obj = ['id', 'size', 'x', 'y']
+            else:
+                raise ValueError(f'Unsupported class {cls.__name__}')
+
+            reader = csv.DictReader(csv_file, obj)
+
+            dict_list = [
+                dict((key, int(value)) for key, value in d.items())
+                for d in reader
+            ]
+            instances = [cls.create(**d) for d in dict_list]
+        return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares.
+
+        Uses the Turtle graphics module.
+
+        Args:
+            list_rectangles (list): List of Rectangle instances.
+            list_squares (list): List of Square instances.
+        """
+        screen = turtle.Screen()
+        screen.title('Drawing Shapes - azara ;)')
+        screen.bgcolor('teal')
+
+        my_turtle = turtle.Turtle()
+        my_turtle.speed(2.5)
+        my_turtle.pensize(2)
+        my_turtle.shape('triangle')
+        my_turtle.shapesize(.8)
+
+        # Draw Rectangles
+        for rectangle in list_rectangles:
+            my_turtle.penup()
+            my_turtle.goto(rectangle.x, rectangle.y)
+            my_turtle.pendown()
+            my_turtle.color('white', 'gray')
+            my_turtle.begin_fill()
+            for _ in range(2):
+                my_turtle.forward(rectangle.width)
+                my_turtle.left(90)
+                my_turtle.forward(rectangle.height)
+                my_turtle.left(90)
+            my_turtle.end_fill()
+
+        # Draw Squares
+        for square in list_squares:
+            my_turtle.penup()
+            my_turtle.goto(square.x, square.y)
+            my_turtle.pendown()
+            my_turtle.color('orange')
+            for _ in range(4):
+                my_turtle.forward(square.size)
+                my_turtle.left(90)
+
+        # Close the window on click
+        screen.exitonclick()
