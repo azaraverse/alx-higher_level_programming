@@ -39,7 +39,8 @@ def list_states(username, password, database_name, name_searched):
 
     # display the results
     for row in results:
-        print(row)
+        if row[1] == name_searched:
+            print(row)
 
     # close the database connection
     db.close()
