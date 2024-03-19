@@ -37,7 +37,8 @@ def list_states(username, password, database_name):
 
     # display the results
     for row in results:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     # close the database connection
     db.close()
