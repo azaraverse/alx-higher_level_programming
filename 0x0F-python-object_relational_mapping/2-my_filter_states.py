@@ -28,7 +28,9 @@ def list_states(username, password, database_name, name_searched):
     cursor = db.cursor()
 
     # vulnerable SQL query
-    sql_query = f"SELECT * FROM states WHERE name = '{name_searched}'"
+    sql_query = (
+        "SELECT * FROM states WHERE name = '{}'".format(name_searched)
+    )
 
     # execute the SQL command
     cursor.execute(sql_query)
