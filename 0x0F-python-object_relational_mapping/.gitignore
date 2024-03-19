@@ -3,7 +3,7 @@
 
 # files
 __init__.py
-0-select_states.sql
+*.sql
 
 # executable
 *.sh
