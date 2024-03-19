@@ -1,0 +1,9 @@
+# directory and its content
+/venv/
+
+# files
+__init__.py
+0-select_states.sql
+
+# executable
+*.sh
