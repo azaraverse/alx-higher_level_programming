@@ -20,7 +20,7 @@ def list_states(username, password, database_name):
         host='localhost',
         port=3306,
         user=username,
-        password=password,
+        passwd=password,
         db=database_name
     )
 
