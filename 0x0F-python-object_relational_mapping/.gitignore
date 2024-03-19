@@ -3,6 +3,7 @@
 
 # files
 __init__.py
+6-model_state.py
 *.sql
 
 # executable
