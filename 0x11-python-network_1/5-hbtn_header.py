@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-'''a python script that fetches from given url'''
+'''a python script that takes in a URL from command line
+sends a request to the URL and displays the value of the
+variable X-Request-ID in the response header.
+'''
 
 import requests
 import sys
