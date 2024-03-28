@@ -1,2 +1,1 @@
-# time complexity of find_peak algorithm
-O(n log n)
+O(log n)
