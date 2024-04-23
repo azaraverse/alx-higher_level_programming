@@ -6,19 +6,19 @@ const request = require('request');
 
 // write a function to write string to file
 function writeWebPage (urlPath, filePath) {
-    request.get(urlPath, (err, response, body) => {
+  request.get(urlPath, (err, response, body) => {
+    if (err) {
+      console.log(err);
+    } if (response.statusCode !== 200) {
+      console.log('code:', response.statusCode);
+    } else {
+      fs.writeFile(filePath, body, 'utf-8', (err) => {
         if (err) {
-            console.log(err);
-        } if (response.statusCode !== 200) {
-            console.log('code:', response.statusCode)
-        } else {
-            fs.writeFile(filePath, body, 'utf-8', (err) => {
-                if (err) {
-                  console.log(err);
-                }
-              });
+          console.log(err);
         }
-    });
+      });
+    }
+  });
 }
 
 const urlPath = process.argv[2];
