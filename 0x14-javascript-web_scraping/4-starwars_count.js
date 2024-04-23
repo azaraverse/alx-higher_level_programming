@@ -4,7 +4,7 @@
 const request = require('request');
 
 // function to get number od movies where character ID 18 is present from api
-function getTitle (apiUrl, characterId) {
+function getCharacterCount (apiUrl, characterId) {
   request.get(apiUrl, (err, response, body) => {
     if (err) {
       console.log(err);
@@ -27,4 +27,4 @@ function getTitle (apiUrl, characterId) {
 const apiUrl = process.argv[2];
 
 // call function to accept variable (id)
-getTitle(apiUrl, 18);
+getCharacterCount(apiUrl, 18);
