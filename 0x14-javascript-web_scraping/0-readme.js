@@ -8,7 +8,7 @@ function readPrintFile (filePath) {
   fs.readFile(filePath, 'utf-8', (data, err) => {
     if (err) {
       console.log(err);
-    } else {
+    } if (data) {
       console.log(data);
     }
   });
